@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer{
+  .yt__container {
+    @apply px-2 md:px-4;
+  }
+  
+  .yt__pl {
+    @apply pl-2 md:pl-4;
+  }
+  
+  .yt__pr {
+    @apply pr-2 md:pr-4;
+  }
+  a.active{
+    @apply bg-neutral-800;
+  }
+  .skeleton-style{
+    @apply bg-neutral-800 bg-opacity-40 rounded-xl hover:bg-opacity-50 duration-300;
+  }
+}
