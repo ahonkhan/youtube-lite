@@ -41,7 +41,7 @@ const RelatedVideoItem = ({ contentItem }) => {
                     </div>
                     <div className="w-full">
                         <p className='leading-5 text-white'>{contentItem?.video?.title}</p>
-                        <Link to={"/channel/" + contentItem?.video?.author?.channelId}>
+                        <Link to={"/channel/" + contentItem?.video?.author?.channelId + "/home"}>
                             <p className='text-sm text-neutral-300 tracking-wide mt-2'>{contentItem?.video?.author?.title}</p>
                         </Link>
                         <div className="statistics text-sm text-neutral-400 tracking-tight flex items-center gap-1">

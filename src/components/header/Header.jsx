@@ -26,16 +26,14 @@ const Header = () => {
             context.setLoading(true)
             context.setFullyLoaded(false)
             context.setVideoItemLoading(true)
+            setInputBoxData("")
+            setInputFocused(false)
+
         }
 
 
     }
-    const LoadSearchData = (e) => {
-        // e.target.value.length > 2 ? setInputFocused(true) : setInputFocused(false)
 
-
-
-    }
     useEffect(() => {
         if (inputBoxData.length > 0) {
             fetchDataFromApi(`search/?q=${inputBoxData}}`).then(res => {
@@ -93,7 +91,7 @@ const Header = () => {
                     <div className="header__mid  flex relative sm:static items-center gap-4 w-full justify-between md:w-fit">
 
                         <form className="search__box  mt-1 sm:relative w-full md:w-[500px] lg:w-[450px] xl:w-[600px] flex items-center rounded-3xl h-10 border-neutral-800 border">
-                            <input onKeyPress={(e) => LoadSearchData(e)} value={inputBoxData} onChange={(e) => { setInputBoxData(e.target.value) }} placeholder='Search your happiness here...' type="text" className='h-full  block placeholder:text-neutral-600 w-full px-4 bg-transparent text-sm text-neutral-400 font-OpenSans outline-none' />
+                            <input value={inputBoxData} onChange={(e) => { setInputBoxData(e.target.value) }} placeholder='Search your happiness here...' type="text" className='h-full  block placeholder:text-neutral-600 w-full px-4 bg-transparent text-sm text-neutral-400 font-OpenSans outline-none' />
                             <button onClick={(e) => searchData(e)} className='shrink-0 rounded-r-3xl bg-neutral-800 px-5 h-full flex items-center justify-center'><AiOutlineSearch className='text-white text-xl' /></button>
                             {/* search suggestions */}
                             <div className={`${inputFocused ? 'block' : 'hidden'} ${searchSuggestions.length !== 0 ? 'py-2' : ''} translate-y-2 scrollbar-thin scrollbar-track-neutral-800 scrollbar-thumb-neutral-700 rounded-lg absolute  w-full bg-neutral-800 shadow-lg top-full right-0 max-h-[380px] overflow-y-auto`}>

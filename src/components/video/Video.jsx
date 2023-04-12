@@ -71,9 +71,9 @@ const Video = ({ videoData }) => {
                 </div>
             </div>
 
-            <div onClick={() => goTo(`/watch/${videoData.videoId}`)} className={`p-2 cursor-pointer ${videoLoading ? 'hidden' : ''}`}>
+            <div className={`p-2 cursor-pointer ${videoLoading ? 'hidden' : ''}`}>
 
-                <div className="video__thambnail_duration relative duration-500 group-hover:scale-105">
+                <div onClick={() => goTo(`/watch/${videoData.videoId}`)} className="video__thambnail_duration relative duration-500 group-hover:scale-105">
                     {
                         (movingThumbnail === undefined || movingThumbnail === null || movingThumbnail == "") ?
                             <img className='w-full rounded-lg' src={thumbnail} alt="" />
@@ -92,10 +92,10 @@ const Video = ({ videoData }) => {
                     <div className="ovarlay absolute pointer-events-none top-0 left-0 h-full w-full duration-500 hover:bg-black hover:bg-opacity-30"></div>
                 </div>
                 <div className="video__footer pt-4 flex gap-3">
-                    <div className="profile shrink-0">
+                    <Link to={`/channel/${videoData?.author?.channelId}/video`} className="profile shrink-0">
                         <img title='' className='w-10 h-10 rounded-full' src={profile} alt="" />
-                    </div>
-                    <div className="w-full">
+                    </Link>
+                    <div onClick={() => goTo(`/watch/${videoData.videoId}`)} className="w-full">
                         <p className=''>{title}</p>
                         <p className='flex items-center text-neutral-400 text-sm pt-2'>
 

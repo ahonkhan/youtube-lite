@@ -46,10 +46,10 @@ const ResultItem = ({ resultData }) => {
                         </div>
                         {/* profile */}
 
-                        <div className="profile flex items-center mt-4">
+                        <Link to={`/channel/${resultData?.video?.author?.channelId}/video`} className="profile flex items-center mt-4">
                             <img className='w-8 h-8 rounded-full' src={resultData?.video?.author?.avatar[0]?.url} alt="" />
                             <p className='text-[13px] font-Montserrat text-neutral-400 ml-2'>{resultData?.video?.author?.title}</p>
-                        </div>
+                        </Link>
 
                         <div className="mt-3">
                             <p className='text-[13px] font-OpenSans text-neutral-200'>{resultData?.video?.descriptionSnippet}</p>

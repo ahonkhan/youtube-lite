@@ -126,7 +126,7 @@ const Watch = () => {
                     </div>
                     <div className={`video__details-footer select-none flex justify-between flex-wrap gap-4`}>
                         <div className="profile flex gap-2 items-center  ">
-                            <Link target={"_blank"} to={'/channel/' + watchData?.author?.channelId} className="profile__img">
+                            <Link to={'/channel/' + watchData?.author?.channelId + "/home"} className="profile__img">
                                 <div className={`rounded-full w-10 h-10 skeleton-style ${watchLoading ? 'block' : 'hidden'}`}></div>
                                 <img className={`rounded-full w-10 h-10 ${watchLoading ? 'hidden' : 'block'}`} src={watchData?.author?.avatar[0]?.url} alt="" />
                             </Link>
